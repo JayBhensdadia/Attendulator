@@ -13,7 +13,10 @@ struct ContentView: View {
     
     var body: some View {
         TabView{
-            //tabview
+            HomeView()
+                .tabItem {
+                    Label("Home", systemImage: "house")
+                }
         }
         .environmentObject(vm.semester)
     }
