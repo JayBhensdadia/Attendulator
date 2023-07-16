@@ -13,6 +13,8 @@
 		494E5B9A2A645FA800577BAB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 494E5B992A645FA800577BAB /* Preview Assets.xcassets */; };
 		494E5BA42A6461F300577BAB /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E5BA32A6461F300577BAB /* Subject.swift */; };
 		494E5BA62A64623600577BAB /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E5BA52A64623600577BAB /* Lecture.swift */; };
+		494E5BA82A64627000577BAB /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E5BA72A64627000577BAB /* Schedule.swift */; };
+		494E5BAA2A64628700577BAB /* Semester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E5BA92A64628700577BAB /* Semester.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		494E5B992A645FA800577BAB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		494E5BA32A6461F300577BAB /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
 		494E5BA52A64623600577BAB /* Lecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lecture.swift; sourceTree = "<group>"; };
+		494E5BA72A64627000577BAB /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		494E5BA92A64628700577BAB /* Semester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Semester.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,8 @@
 			children = (
 				494E5BA32A6461F300577BAB /* Subject.swift */,
 				494E5BA52A64623600577BAB /* Lecture.swift */,
+				494E5BA72A64627000577BAB /* Schedule.swift */,
+				494E5BA92A64628700577BAB /* Semester.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,8 +174,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				494E5BA62A64623600577BAB /* Lecture.swift in Sources */,
+				494E5BAA2A64628700577BAB /* Semester.swift in Sources */,
 				494E5B952A645FA600577BAB /* ContentView.swift in Sources */,
 				494E5BA42A6461F300577BAB /* Subject.swift in Sources */,
+				494E5BA82A64627000577BAB /* Schedule.swift in Sources */,
 				494E5B932A645FA600577BAB /* AttendulatorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
