@@ -22,6 +22,11 @@ struct ContentView: View {
                 .tabItem {
                     Label("Schedule", systemImage: "calendar")
                 }
+            
+            AllLecturesView()
+                .tabItem {
+                    Label("All Lectures", systemImage: "list.bullet")
+                }
         }
         .environmentObject(vm.semester)
     }
