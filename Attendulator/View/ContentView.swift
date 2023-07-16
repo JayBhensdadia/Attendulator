@@ -32,8 +32,19 @@ struct ContentView: View {
                 .tabItem {
                     Label("All Lectures", systemImage: "list.bullet")
                 }
+            
+            AttendedLecturesView()
+                .tabItem{
+                    Label("Attended", systemImage: "checkmark.circle.fill")
+                }
+            
+            SettingsView()
+                .tabItem {
+                    Label("Settings", systemImage: "person.fill")
+                }
         }
         .environmentObject(vm.semester)
+        .tint(.cyan)
     }
 }
 
