@@ -53,8 +53,7 @@ struct HomeView: View {
                                 vm.showingSubjectDetailVIew = true
                             }label: {
                                 ZStack{
-                                    //CircularProgressView(progress: $vm.progress)
-                                    Circle()
+                                    CircularProgressView(progress: $vm.progress)
                                         .frame(width: 100,height: 100)
                                         .padding()
                                     
@@ -77,7 +76,7 @@ struct HomeView: View {
                 //AddSubjectView()
             }
             .sheet(isPresented: $vm.showingSubjectDetailVIew) {
-                //SubjectDetailView(subject: vm.selectedSubject ?? sem.subjects[0])
+                SubjectDetailView(subject: vm.selectedSubject ?? sem.subjects[0])
             }
         }
     }
