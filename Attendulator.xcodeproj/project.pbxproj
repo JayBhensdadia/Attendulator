@@ -21,6 +21,9 @@
 		494E5BB32A6466C600577BAB /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E5BB22A6466C600577BAB /* CircularProgressView.swift */; };
 		494E5BB52A64675C00577BAB /* SubjectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E5BB42A64675C00577BAB /* SubjectDetailView.swift */; };
 		494E5BBA2A646ADE00577BAB /* AddSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E5BB92A646ADE00577BAB /* AddSubjectView.swift */; };
+		494E5BBC2A646B5A00577BAB /* LectureItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E5BBB2A646B5A00577BAB /* LectureItemView.swift */; };
+		494E5BBE2A646B8400577BAB /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E5BBD2A646B8400577BAB /* ScheduleView.swift */; };
+		494E5BC02A646B9A00577BAB /* ViewModel-ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E5BBF2A646B9A00577BAB /* ViewModel-ScheduleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,9 @@
 		494E5BB22A6466C600577BAB /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		494E5BB42A64675C00577BAB /* SubjectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectDetailView.swift; sourceTree = "<group>"; };
 		494E5BB92A646ADE00577BAB /* AddSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubjectView.swift; sourceTree = "<group>"; };
+		494E5BBB2A646B5A00577BAB /* LectureItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureItemView.swift; sourceTree = "<group>"; };
+		494E5BBD2A646B8400577BAB /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		494E5BBF2A646B9A00577BAB /* ViewModel-ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel-ScheduleView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,7 @@
 			children = (
 				494E5B942A645FA600577BAB /* ContentView.swift */,
 				494E5BAD2A6464C900577BAB /* HomeView.swift */,
+				494E5BBD2A646B8400577BAB /* ScheduleView.swift */,
 				494E5BB82A646AA400577BAB /* DetailViews */,
 				494E5BB12A6466AE00577BAB /* CustomViews */,
 			);
@@ -116,6 +123,7 @@
 			children = (
 				494E5BAB2A64631500577BAB /* ViewModel-ContentView.swift */,
 				494E5BAF2A6464DA00577BAB /* ViewModel-HomeView.swift */,
+				494E5BBF2A646B9A00577BAB /* ViewModel-ScheduleView.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -124,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				494E5BB22A6466C600577BAB /* CircularProgressView.swift */,
+				494E5BBB2A646B5A00577BAB /* LectureItemView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -210,15 +219,18 @@
 				494E5BA62A64623600577BAB /* Lecture.swift in Sources */,
 				494E5BB52A64675C00577BAB /* SubjectDetailView.swift in Sources */,
 				494E5BAC2A64631500577BAB /* ViewModel-ContentView.swift in Sources */,
+				494E5BBE2A646B8400577BAB /* ScheduleView.swift in Sources */,
 				494E5BBA2A646ADE00577BAB /* AddSubjectView.swift in Sources */,
 				494E5BAA2A64628700577BAB /* Semester.swift in Sources */,
 				494E5B952A645FA600577BAB /* ContentView.swift in Sources */,
 				494E5BA42A6461F300577BAB /* Subject.swift in Sources */,
 				494E5BAE2A6464C900577BAB /* HomeView.swift in Sources */,
 				494E5BB02A6464DA00577BAB /* ViewModel-HomeView.swift in Sources */,
+				494E5BBC2A646B5A00577BAB /* LectureItemView.swift in Sources */,
 				494E5BA82A64627000577BAB /* Schedule.swift in Sources */,
 				494E5BB32A6466C600577BAB /* CircularProgressView.swift in Sources */,
 				494E5B932A645FA600577BAB /* AttendulatorApp.swift in Sources */,
+				494E5BC02A646B9A00577BAB /* ViewModel-ScheduleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
