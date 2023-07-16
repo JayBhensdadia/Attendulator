@@ -15,6 +15,7 @@
 		494E5BA62A64623600577BAB /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E5BA52A64623600577BAB /* Lecture.swift */; };
 		494E5BA82A64627000577BAB /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E5BA72A64627000577BAB /* Schedule.swift */; };
 		494E5BAA2A64628700577BAB /* Semester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E5BA92A64628700577BAB /* Semester.swift */; };
+		494E5BAC2A64631500577BAB /* ViewModel-ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E5BAB2A64631500577BAB /* ViewModel-ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		494E5BA52A64623600577BAB /* Lecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lecture.swift; sourceTree = "<group>"; };
 		494E5BA72A64627000577BAB /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		494E5BA92A64628700577BAB /* Semester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Semester.swift; sourceTree = "<group>"; };
+		494E5BAB2A64631500577BAB /* ViewModel-ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel-ContentView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		494E5BA22A64610500577BAB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				494E5BAB2A64631500577BAB /* ViewModel-ContentView.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				494E5BA62A64623600577BAB /* Lecture.swift in Sources */,
+				494E5BAC2A64631500577BAB /* ViewModel-ContentView.swift in Sources */,
 				494E5BAA2A64628700577BAB /* Semester.swift in Sources */,
 				494E5B952A645FA600577BAB /* ContentView.swift in Sources */,
 				494E5BA42A6461F300577BAB /* Subject.swift in Sources */,
