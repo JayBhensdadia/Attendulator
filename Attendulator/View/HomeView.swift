@@ -73,7 +73,7 @@ struct HomeView: View {
             }
             .navigationTitle("Home")
             .sheet(isPresented: $vm.showingAddSubjectView) {
-                //AddSubjectView()
+                AddSubjectView()
             }
             .sheet(isPresented: $vm.showingSubjectDetailVIew) {
                 SubjectDetailView(subject: vm.selectedSubject ?? sem.subjects[0])

@@ -20,6 +20,7 @@
 		494E5BB02A6464DA00577BAB /* ViewModel-HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E5BAF2A6464DA00577BAB /* ViewModel-HomeView.swift */; };
 		494E5BB32A6466C600577BAB /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E5BB22A6466C600577BAB /* CircularProgressView.swift */; };
 		494E5BB52A64675C00577BAB /* SubjectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E5BB42A64675C00577BAB /* SubjectDetailView.swift */; };
+		494E5BBA2A646ADE00577BAB /* AddSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E5BB92A646ADE00577BAB /* AddSubjectView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		494E5BAF2A6464DA00577BAB /* ViewModel-HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel-HomeView.swift"; sourceTree = "<group>"; };
 		494E5BB22A6466C600577BAB /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		494E5BB42A64675C00577BAB /* SubjectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectDetailView.swift; sourceTree = "<group>"; };
+		494E5BB92A646ADE00577BAB /* AddSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubjectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +103,10 @@
 		494E5BA12A6460FD00577BAB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				494E5BB12A6466AE00577BAB /* CustomViews */,
 				494E5B942A645FA600577BAB /* ContentView.swift */,
 				494E5BAD2A6464C900577BAB /* HomeView.swift */,
-				494E5BB42A64675C00577BAB /* SubjectDetailView.swift */,
+				494E5BB82A646AA400577BAB /* DetailViews */,
+				494E5BB12A6466AE00577BAB /* CustomViews */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -124,6 +126,15 @@
 				494E5BB22A6466C600577BAB /* CircularProgressView.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		494E5BB82A646AA400577BAB /* DetailViews */ = {
+			isa = PBXGroup;
+			children = (
+				494E5BB42A64675C00577BAB /* SubjectDetailView.swift */,
+				494E5BB92A646ADE00577BAB /* AddSubjectView.swift */,
+			);
+			path = DetailViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +210,7 @@
 				494E5BA62A64623600577BAB /* Lecture.swift in Sources */,
 				494E5BB52A64675C00577BAB /* SubjectDetailView.swift in Sources */,
 				494E5BAC2A64631500577BAB /* ViewModel-ContentView.swift in Sources */,
+				494E5BBA2A646ADE00577BAB /* AddSubjectView.swift in Sources */,
 				494E5BAA2A64628700577BAB /* Semester.swift in Sources */,
 				494E5B952A645FA600577BAB /* ContentView.swift in Sources */,
 				494E5BA42A6461F300577BAB /* Subject.swift in Sources */,
