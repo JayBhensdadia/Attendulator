@@ -26,6 +26,8 @@
 		494E5BC02A646B9A00577BAB /* ViewModel-ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E5BBF2A646B9A00577BAB /* ViewModel-ScheduleView.swift */; };
 		494E5BC22A646C3400577BAB /* AllLecturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E5BC12A646C3400577BAB /* AllLecturesView.swift */; };
 		494E5BC42A646C4B00577BAB /* ViewModel-AllLecturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E5BC32A646C4B00577BAB /* ViewModel-AllLecturesView.swift */; };
+		494E5BC62A646CC900577BAB /* TodaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E5BC52A646CC900577BAB /* TodaysView.swift */; };
+		494E5BC82A646CD700577BAB /* ViewModel-TodaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E5BC72A646CD700577BAB /* ViewModel-TodaysView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		494E5BBF2A646B9A00577BAB /* ViewModel-ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel-ScheduleView.swift"; sourceTree = "<group>"; };
 		494E5BC12A646C3400577BAB /* AllLecturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllLecturesView.swift; sourceTree = "<group>"; };
 		494E5BC32A646C4B00577BAB /* ViewModel-AllLecturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel-AllLecturesView.swift"; sourceTree = "<group>"; };
+		494E5BC52A646CC900577BAB /* TodaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysView.swift; sourceTree = "<group>"; };
+		494E5BC72A646CD700577BAB /* ViewModel-TodaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel-TodaysView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 				494E5BAD2A6464C900577BAB /* HomeView.swift */,
 				494E5BBD2A646B8400577BAB /* ScheduleView.swift */,
 				494E5BC12A646C3400577BAB /* AllLecturesView.swift */,
+				494E5BC52A646CC900577BAB /* TodaysView.swift */,
 				494E5BB82A646AA400577BAB /* DetailViews */,
 				494E5BB12A6466AE00577BAB /* CustomViews */,
 			);
@@ -130,6 +135,7 @@
 				494E5BAF2A6464DA00577BAB /* ViewModel-HomeView.swift */,
 				494E5BBF2A646B9A00577BAB /* ViewModel-ScheduleView.swift */,
 				494E5BC32A646C4B00577BAB /* ViewModel-AllLecturesView.swift */,
+				494E5BC72A646CD700577BAB /* ViewModel-TodaysView.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -232,8 +238,10 @@
 				494E5BC42A646C4B00577BAB /* ViewModel-AllLecturesView.swift in Sources */,
 				494E5BA42A6461F300577BAB /* Subject.swift in Sources */,
 				494E5BAE2A6464C900577BAB /* HomeView.swift in Sources */,
+				494E5BC82A646CD700577BAB /* ViewModel-TodaysView.swift in Sources */,
 				494E5BB02A6464DA00577BAB /* ViewModel-HomeView.swift in Sources */,
 				494E5BBC2A646B5A00577BAB /* LectureItemView.swift in Sources */,
+				494E5BC62A646CC900577BAB /* TodaysView.swift in Sources */,
 				494E5BC22A646C3400577BAB /* AllLecturesView.swift in Sources */,
 				494E5BA82A64627000577BAB /* Schedule.swift in Sources */,
 				494E5BB32A6466C600577BAB /* CircularProgressView.swift in Sources */,

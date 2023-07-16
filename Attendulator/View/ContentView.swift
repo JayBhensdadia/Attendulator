@@ -18,6 +18,11 @@ struct ContentView: View {
                     Label("Home", systemImage: "house")
                 }
             
+            TodaysView()
+                .tabItem {
+                    Label("Today",systemImage: "clock.fill")
+                }
+            
             ScheduleView()
                 .tabItem {
                     Label("Schedule", systemImage: "calendar")
