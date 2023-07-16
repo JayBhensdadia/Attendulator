@@ -11,6 +11,7 @@
 		494E5B952A645FA600577BAB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E5B942A645FA600577BAB /* ContentView.swift */; };
 		494E5B972A645FA800577BAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 494E5B962A645FA800577BAB /* Assets.xcassets */; };
 		494E5B9A2A645FA800577BAB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 494E5B992A645FA800577BAB /* Preview Assets.xcassets */; };
+		494E5BA42A6461F300577BAB /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E5BA32A6461F300577BAB /* Subject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		494E5B942A645FA600577BAB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		494E5B962A645FA800577BAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		494E5B992A645FA800577BAB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		494E5BA32A6461F300577BAB /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		494E5BA02A6460F700577BAB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				494E5BA32A6461F300577BAB /* Subject.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				494E5B952A645FA600577BAB /* ContentView.swift in Sources */,
+				494E5BA42A6461F300577BAB /* Subject.swift in Sources */,
 				494E5B932A645FA600577BAB /* AttendulatorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
