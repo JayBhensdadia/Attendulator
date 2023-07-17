@@ -19,6 +19,7 @@ struct LectureItemView: View {
         VStack(alignment: .leading){
             HStack{
                 Text("Sub:")
+                    .fontWeight(.bold)
                 Picker("Subject:", selection: $lecture.subject){
                     ForEach(sem.subjects){ subject in
                         Text(subject.shortName)
@@ -32,7 +33,9 @@ struct LectureItemView: View {
             
             HStack{
                 
-                Text("Start TIme")
+                Text("Start Time")
+                    .fontWeight(.bold)
+                
                 
                 HStack{
                     Picker("Start Hour", selection: $lecture.startHour) {
@@ -44,6 +47,7 @@ struct LectureItemView: View {
                     .tint(.primary)
                     
                     Text(":")
+                        .fontWeight(.bold)
                     
                     Picker("Start Minute", selection: $lecture.startMinute) {
                         ForEach(0..<60){
@@ -58,6 +62,7 @@ struct LectureItemView: View {
             HStack{
                 
                 Text("End TIme")
+                    .fontWeight(.bold)
                 
                 HStack{
                     Picker("End Hour", selection: $lecture.endHour) {
@@ -70,6 +75,7 @@ struct LectureItemView: View {
                     
                     
                     Text(":")
+                        .fontWeight(.bold)
                     
                     Picker("End Minute", selection: $lecture.endMinute) {
                         ForEach(0..<60){

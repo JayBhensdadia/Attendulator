@@ -10,7 +10,7 @@ import Foundation
 class Semester:  ObservableObject, Identifiable, Hashable, Equatable {
     
 
-    var id: Int
+    @Published var id: Int
     @Published var schedule: Schedule
     @Published var allLectures: [Lecture]
     @Published var subjects: [Subject]

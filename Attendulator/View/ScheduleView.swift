@@ -220,7 +220,7 @@ struct ScheduleView: View {
                 }
                 
             }
-            .navigationTitle("Semester 6")
+            .navigationTitle("Semester \(sem.id)")
             .disabled(sem.subjects.count == 0)
             .toolbar{
                 Button("Save"){
