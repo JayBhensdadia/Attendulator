@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct UserDetailsView: View {
+    
     @EnvironmentObject var user: User
     @State var changeSemester = false
+    @State var showingAddSubjectView = false
+    
     var body: some View {
         NavigationStack{
             Form{
@@ -18,42 +21,59 @@ struct UserDetailsView: View {
                     TextField("Name", text: $user.name)
                 }
                 
-                Section("Semesters"){
-                    ForEach(user.semesters){ sem in
-                        VStack{
-                            Text("Sem \(sem.id)")
-                        }
+                Section("Current Semester"){
+                    TextField("sem", value: $user.currentSemester.id, format: .number)
+                    DatePicker("Start Date", selection: $user.currentSemester.startDate, displayedComponents: .date)
+                    DatePicker("End Date", selection: $user.currentSemester.endDate, displayedComponents: .date)
+                    
+                        
+                }
+                
+                Section("Subjects"){
+                    ForEach(user.currentSemester.subjects){ subject in
+                        Text(subject.shortName)
+                    }
+                    Button{
+                        
+                        showingAddSubjectView = true
+                        
+                    }label: {
+                        Text("Add Subject")
                     }
                 }
                 
-                Section("More on lectures..."){
-                    
+                
+                Section{
                     NavigationLink{
                         AllLecturesView()
                     }label: {
-                        Text("All Lectures")
+                        Text("All Lectures : \(user.currentSemester.allLectures.count)")
                     }
                     
                     NavigationLink{
                         AttendedLecturesView()
                     }label: {
-                        Text("Attended Lectures")
+                        Text("Attended Lectures: \(user.currentSemester.lecturesBuffer.count)")
+                    }
+                }
+                
+               
+                
+                Section("Renew semester"){
+                    
+                    Button{
+                        user.currentSemester = Semester()
+                    }label: {
+                        Text("Renew Semester")
                     }
                     
                 }
                 
-                Section("Change semester"){
-                    Button{
-                        
-                        user.currentSemester = Semester()
-                        
-                    }label: {
-                        Text("Change Semester")
-                    }
-                }
-                
             }
             .navigationTitle("User Details")
+            .sheet(isPresented: $showingAddSubjectView) {
+                AddSubjectView()
+            }
             
         }
         

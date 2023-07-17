@@ -12,11 +12,21 @@ struct ScheduleView: View {
     @EnvironmentObject var sem : Semester
     @StateObject var vm = ViewModel()
     
+    @State var showingConfirmationAlert = false
+    
     var body: some View {
         NavigationStack{
             
+            if sem.subjects.count == 0{
+                Text("Add Subjects first!")
+                    .font(.title.bold())
+                    .foregroundColor(.red)
+            }
             
             ScrollView(.horizontal){
+                
+                
+                
                 LazyHStack{
                     
                     //MARK: Monday
@@ -202,10 +212,17 @@ struct ScheduleView: View {
                 }
             }
             .navigationTitle("Semester 6")
+            .disabled(sem.subjects.count == 0)
             .toolbar{
                 Button("Save"){
+                    showingConfirmationAlert = true
                     vm.generateLectures(semester: sem)
                 }
+            }
+            .alert("Are you sure?", isPresented: $showingConfirmationAlert) {
+                Button("Ok"){}
+            }message: {
+                Text("Make sure you have added the schedule correctly, because changing it will result in loosing your attended data")
             }
             
         }

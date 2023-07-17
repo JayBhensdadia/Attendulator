@@ -64,8 +64,12 @@ struct SubjectDetailView: View {
         NavigationStack{
             ScrollView{
                 LazyVStack(alignment: .leading){
-                    Text(subject.fullName)
-                        .font(.title.bold())
+                    VStack(alignment: .leading){
+                        Text(subject.shortName)
+                            .font(.title.bold())
+                        Text("(\(subject.fullName))")
+                            .font(.title3.bold())
+                    }
                 
                     HStack{
                         Text(subjectCompletionPercentage, format: .percent)

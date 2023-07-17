@@ -29,6 +29,7 @@ struct HomeView: View {
                     VStack{
                         Text(vm.percentCompleted(sem: sem))
                         Text("Completed")
+                            .font(.headline.bold())
                     }
                 }
                 .font(.largeTitle.bold())
@@ -39,8 +40,8 @@ struct HomeView: View {
                 .padding()
                 
                 HStack{
-                    Text("Subjects:")
-                        .font(.title.bold())
+                    Text(sem.subjects.count == 0 ? "Add Subjects!" : " 📚 Subjects")
+                        .font(.title2.bold())
                         //.padding()
                     
                     Spacer()
