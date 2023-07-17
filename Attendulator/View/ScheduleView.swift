@@ -17,199 +17,208 @@ struct ScheduleView: View {
     var body: some View {
         NavigationStack{
             
-            if sem.subjects.count == 0{
-                Text("Add Subjects first!")
-                    .font(.title.bold())
-                    .foregroundColor(.red)
-            }
             
-            ScrollView(.horizontal){
+            
+            ZStack{
+                ScrollView(.horizontal){
+                    
+                    
+                    
+                    LazyHStack{
+                        
+                        //MARK: Monday
+                        VStack{
+                            Text("Monday")
+                                .foregroundColor(.cyan)
+                                .font(.title)
+                                .padding()
+                            
+                            ScrollView{
+                                LazyVStack{
+                                    ForEach($sem.schedule.monday){ $lecture in
+                                        LectureItemView(lecture: $lecture)
+                                    }
+                                    
+                                    Button{
+                                        sem.schedule.monday.append(vm.addLecture(sem: sem))
+                                    }label: {
+                                        Image(systemName: "plus.circle")
+                                            .font(.largeTitle)
+                                    }
+                                    .foregroundColor(.cyan)
+                                    .padding()
+                                }
+                            }
+                        }
+                        .frame(maxWidth: 350)
+                        .background(.cyan.gradient.opacity(0.2))
+                        .clipShape(RoundedRectangle(cornerRadius: 15))
+                        .padding()
+                        
+                        //MARK: Tuesday
+                        VStack{
+                            Text("Tuesday")
+                                .foregroundColor(.cyan)
+                                .font(.title)
+                                .padding()
+                            
+                            ScrollView{
+                                LazyVStack{
+                                    ForEach($sem.schedule.tuesday){ $lecture in
+                                        LectureItemView(lecture: $lecture)
+                                    }
+                                    
+                                    Button{
+                                        sem.schedule.tuesday.append(vm.addLecture(sem: sem))
+                                    }label: {
+                                        Image(systemName: "plus.circle")
+                                            .font(.largeTitle)
+                                    }
+                                    .foregroundColor(.cyan)
+                                    .padding()
+                                }
+                            }
+                        }
+                        .frame(maxWidth: 350)
+                        .background(.cyan.gradient.opacity(0.2))
+                        .clipShape(RoundedRectangle(cornerRadius: 15))
+                        .padding()
+                        
+                        
+                        //MARK: Wednesday
+                        VStack{
+                            Text("Wednesday")
+                                .foregroundColor(.cyan)
+                                .font(.title)
+                                .padding()
+                            
+                            ScrollView{
+                                LazyVStack{
+                                    ForEach($sem.schedule.wednesday){ $lecture in
+                                        LectureItemView(lecture: $lecture)
+                                    }
+                                    
+                                    Button{
+                                        sem.schedule.wednesday.append(vm.addLecture(sem: sem))
+                                    }label: {
+                                        Image(systemName: "plus.circle")
+                                            .font(.largeTitle)
+                                    }
+                                    .foregroundColor(.cyan)
+                                    .padding()
+                                }
+                            }
+                        }
+                        .frame(maxWidth: 350)
+                        .background(.cyan.gradient.opacity(0.2))
+                        .clipShape(RoundedRectangle(cornerRadius: 15))
+                        .padding()
+                        
+                        
+                        //MARK: Thursday
+                        VStack{
+                            Text("Thursday")
+                                .foregroundColor(.cyan)
+                                .font(.title)
+                                .padding()
+                            
+                            ScrollView{
+                                LazyVStack{
+                                    ForEach($sem.schedule.thursday){ $lecture in
+                                        LectureItemView(lecture: $lecture)
+                                    }
+                                    
+                                    Button{
+                                        sem.schedule.thursday.append(vm.addLecture(sem: sem))
+                                    }label: {
+                                        Image(systemName: "plus.circle")
+                                            .font(.largeTitle)
+                                    }
+                                    .foregroundColor(.cyan)
+                                    .padding()
+                                }
+                            }
+                        }
+                        .frame(maxWidth: 350)
+                        .background(.cyan.gradient.opacity(0.2))
+                        .clipShape(RoundedRectangle(cornerRadius: 15))
+                        .padding()
+                        
+                        
+                        //MARK: Friday
+                        VStack{
+                            Text("Friday")
+                                .foregroundColor(.cyan)
+                                .font(.title)
+                                .padding()
+                            
+                            ScrollView{
+                                LazyVStack{
+                                    ForEach($sem.schedule.friday){ $lecture in
+                                        LectureItemView(lecture: $lecture)
+                                    }
+                                    
+                                    Button{
+                                        sem.schedule.friday.append(vm.addLecture(sem: sem))
+                                    }label: {
+                                        Image(systemName: "plus.circle")
+                                            .font(.largeTitle)
+                                    }
+                                    .foregroundColor(.cyan)
+                                    .padding()
+                                }
+                            }
+                        }
+                        .frame(maxWidth: 350)
+                        .background(.cyan.gradient.opacity(0.2))
+                        .clipShape(RoundedRectangle(cornerRadius: 15))
+                        .padding()
+                        
+                        
+                        //MARK: Saturday
+                        VStack{
+                            Text("Saturday")
+                                .foregroundColor(.cyan)
+                                .font(.title)
+                                .padding()
+                            
+                            ScrollView{
+                                LazyVStack{
+                                    ForEach($sem.schedule.saturday){ $lecture in
+                                        LectureItemView(lecture: $lecture)
+                                    }
+                                    
+                                    Button{
+                                        sem.schedule.saturday.append(vm.addLecture(sem: sem))
+                                    }label: {
+                                        Image(systemName: "plus.circle")
+                                            .font(.largeTitle)
+                                            
+                                    }
+                                    .foregroundColor(.cyan)
+                                    .padding()
+                                    
+                                }
+                            }
+                        }
+                        .frame(maxWidth: 350)
+                        .background(.cyan.gradient.opacity(0.2))
+                        .clipShape(RoundedRectangle(cornerRadius: 15))
+                        .padding()
+                        
+                    }
+                }
                 
-                
-                
-                LazyHStack{
-                    
-                    //MARK: Monday
-                    VStack{
-                        Text("Monday")
-                            .foregroundColor(.cyan)
-                            .font(.title)
-                            .padding()
-                        
-                        ScrollView{
-                            LazyVStack{
-                                ForEach($sem.schedule.monday){ $lecture in
-                                    LectureItemView(lecture: $lecture)
-                                }
-                                
-                                Button{
-                                    sem.schedule.monday.append(vm.addLecture(sem: sem))
-                                }label: {
-                                    Image(systemName: "plus.circle")
-                                        .font(.largeTitle)
-                                }
-                                .foregroundColor(.cyan)
-                                .padding()
-                            }
-                        }
-                    }
-                    .frame(maxWidth: 350)
-                    .background(.cyan.gradient.opacity(0.2))
-                    .clipShape(RoundedRectangle(cornerRadius: 15))
-                    .padding()
-                    
-                    //MARK: Tuesday
-                    VStack{
-                        Text("Tuesday")
-                            .foregroundColor(.cyan)
-                            .font(.title)
-                            .padding()
-                        
-                        ScrollView{
-                            LazyVStack{
-                                ForEach($sem.schedule.tuesday){ $lecture in
-                                    LectureItemView(lecture: $lecture)
-                                }
-                                
-                                Button{
-                                    sem.schedule.tuesday.append(vm.addLecture(sem: sem))
-                                }label: {
-                                    Image(systemName: "plus.circle")
-                                        .font(.largeTitle)
-                                }
-                                .foregroundColor(.cyan)
-                                .padding()
-                            }
-                        }
-                    }
-                    .frame(maxWidth: 350)
-                    .background(.cyan.gradient.opacity(0.2))
-                    .clipShape(RoundedRectangle(cornerRadius: 15))
-                    .padding()
-                    
-                    
-                    //MARK: Wednesday
-                    VStack{
-                        Text("Wednesday")
-                            .foregroundColor(.cyan)
-                            .font(.title)
-                            .padding()
-                        
-                        ScrollView{
-                            LazyVStack{
-                                ForEach($sem.schedule.wednesday){ $lecture in
-                                    LectureItemView(lecture: $lecture)
-                                }
-                                
-                                Button{
-                                    sem.schedule.wednesday.append(vm.addLecture(sem: sem))
-                                }label: {
-                                    Image(systemName: "plus.circle")
-                                        .font(.largeTitle)
-                                }
-                                .foregroundColor(.cyan)
-                                .padding()
-                            }
-                        }
-                    }
-                    .frame(maxWidth: 350)
-                    .background(.cyan.gradient.opacity(0.2))
-                    .clipShape(RoundedRectangle(cornerRadius: 15))
-                    .padding()
-                    
-                    
-                    //MARK: Thursday
-                    VStack{
-                        Text("Thursday")
-                            .foregroundColor(.cyan)
-                            .font(.title)
-                            .padding()
-                        
-                        ScrollView{
-                            LazyVStack{
-                                ForEach($sem.schedule.thursday){ $lecture in
-                                    LectureItemView(lecture: $lecture)
-                                }
-                                
-                                Button{
-                                    sem.schedule.thursday.append(vm.addLecture(sem: sem))
-                                }label: {
-                                    Image(systemName: "plus.circle")
-                                        .font(.largeTitle)
-                                }
-                                .foregroundColor(.cyan)
-                                .padding()
-                            }
-                        }
-                    }
-                    .frame(maxWidth: 350)
-                    .background(.cyan.gradient.opacity(0.2))
-                    .clipShape(RoundedRectangle(cornerRadius: 15))
-                    .padding()
-                    
-                    
-                    //MARK: Friday
-                    VStack{
-                        Text("Friday")
-                            .foregroundColor(.cyan)
-                            .font(.title)
-                            .padding()
-                        
-                        ScrollView{
-                            LazyVStack{
-                                ForEach($sem.schedule.friday){ $lecture in
-                                    LectureItemView(lecture: $lecture)
-                                }
-                                
-                                Button{
-                                    sem.schedule.friday.append(vm.addLecture(sem: sem))
-                                }label: {
-                                    Image(systemName: "plus.circle")
-                                        .font(.largeTitle)
-                                }
-                                .foregroundColor(.cyan)
-                                .padding()
-                            }
-                        }
-                    }
-                    .frame(maxWidth: 350)
-                    .background(.cyan.gradient.opacity(0.2))
-                    .clipShape(RoundedRectangle(cornerRadius: 15))
-                    .padding()
-                    
-                    
-                    //MARK: Saturday
-                    VStack{
-                        Text("Saturday")
-                            .foregroundColor(.cyan)
-                            .font(.title)
-                            .padding()
-                        
-                        ScrollView{
-                            LazyVStack{
-                                ForEach($sem.schedule.saturday){ $lecture in
-                                    LectureItemView(lecture: $lecture)
-                                }
-                                
-                                Button{
-                                    sem.schedule.saturday.append(vm.addLecture(sem: sem))
-                                }label: {
-                                    Image(systemName: "plus.circle")
-                                        .font(.largeTitle)
-                                        
-                                }
-                                .foregroundColor(.cyan)
-                                .padding()
-                                
-                            }
-                        }
-                    }
-                    .frame(maxWidth: 350)
-                    .background(.cyan.gradient.opacity(0.2))
-                    .clipShape(RoundedRectangle(cornerRadius: 15))
-                    .padding()
+                if sem.subjects.count == 0{
+                    Text("⚠️ Add Subjects first!")
+                        .font(.title2.bold())
+                        .foregroundColor(.red)
+                        .padding()
+                        .background(.red.gradient.opacity(0.2))
+                        .clipShape(RoundedRectangle(cornerRadius: 15))
                     
                 }
+                
             }
             .navigationTitle("Semester 6")
             .disabled(sem.subjects.count == 0)
