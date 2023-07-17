@@ -30,6 +30,8 @@
 		494E5BC82A646CD700577BAB /* ViewModel-TodaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E5BC72A646CD700577BAB /* ViewModel-TodaysView.swift */; };
 		494E5BCA2A646D9F00577BAB /* AttendedLecturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E5BC92A646D9F00577BAB /* AttendedLecturesView.swift */; };
 		494E5BCC2A646E0B00577BAB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E5BCB2A646E0B00577BAB /* SettingsView.swift */; };
+		49F5856B2A6593C500890C0B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F5856A2A6593C500890C0B /* User.swift */; };
+		49F5856D2A6594E600890C0B /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F5856C2A6594E600890C0B /* UserDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		494E5BC72A646CD700577BAB /* ViewModel-TodaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel-TodaysView.swift"; sourceTree = "<group>"; };
 		494E5BC92A646D9F00577BAB /* AttendedLecturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendedLecturesView.swift; sourceTree = "<group>"; };
 		494E5BCB2A646E0B00577BAB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		49F5856A2A6593C500890C0B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		49F5856C2A6594E600890C0B /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,7 @@
 				494E5BA52A64623600577BAB /* Lecture.swift */,
 				494E5BA72A64627000577BAB /* Schedule.swift */,
 				494E5BA92A64628700577BAB /* Semester.swift */,
+				49F5856A2A6593C500890C0B /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -130,6 +135,7 @@
 				494E5BB12A6466AE00577BAB /* CustomViews */,
 				494E5BC92A646D9F00577BAB /* AttendedLecturesView.swift */,
 				494E5BCB2A646E0B00577BAB /* SettingsView.swift */,
+				49F5856C2A6594E600890C0B /* UserDetailsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -239,11 +245,13 @@
 				494E5BB52A64675C00577BAB /* SubjectDetailView.swift in Sources */,
 				494E5BAC2A64631500577BAB /* ViewModel-ContentView.swift in Sources */,
 				494E5BBE2A646B8400577BAB /* ScheduleView.swift in Sources */,
+				49F5856D2A6594E600890C0B /* UserDetailsView.swift in Sources */,
 				494E5BBA2A646ADE00577BAB /* AddSubjectView.swift in Sources */,
 				494E5BAA2A64628700577BAB /* Semester.swift in Sources */,
 				494E5B952A645FA600577BAB /* ContentView.swift in Sources */,
 				494E5BC42A646C4B00577BAB /* ViewModel-AllLecturesView.swift in Sources */,
 				494E5BA42A6461F300577BAB /* Subject.swift in Sources */,
+				49F5856B2A6593C500890C0B /* User.swift in Sources */,
 				494E5BAE2A6464C900577BAB /* HomeView.swift in Sources */,
 				494E5BC82A646CD700577BAB /* ViewModel-TodaysView.swift in Sources */,
 				494E5BB02A6464DA00577BAB /* ViewModel-HomeView.swift in Sources */,

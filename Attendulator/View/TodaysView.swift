@@ -16,7 +16,7 @@ struct TodaysView: View {
     var todaysLectures: [Lecture]{
         var lecs = [Lecture]()
         for lecture in sem.allLectures{
-            if lecture.date == Date(){
+            if lecture.date! <= Date(){
                 lecs.append(lecture)
             }
         }

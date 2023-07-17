@@ -18,7 +18,7 @@ struct AllLecturesView: View {
                 ForEach(sem.allLectures){ lecture in
                     HStack{
                         Button{
-                            vm.markAttended(semester: sem, lecId: lecture.id)
+                            //vm.markAttended(semester: sem, lecId: lecture.id)
                         }label: {
                             Image(systemName:  lecture.attended ? "checkmark.circle.fill": "circle")
                         }

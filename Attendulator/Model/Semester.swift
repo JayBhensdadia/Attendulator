@@ -7,8 +7,12 @@
 
 import Foundation
 
-class Semester: ObservableObject{
+class Semester:   ObservableObject, Identifiable {
     
+    
+    
+    
+    let id: Int
     @Published var schedule: Schedule
     @Published var allLectures: [Lecture]
     @Published var subjects: [Subject]
@@ -18,6 +22,7 @@ class Semester: ObservableObject{
     var lecturesBuffer = [Lecture]()
     
     init(){
+        id = 6
         schedule = Schedule()
         startDate = Date()
         endDate = Date().addingTimeInterval(3600*24*7*4)
@@ -45,5 +50,7 @@ class Semester: ObservableObject{
         
         return count
     }
+    
+    
     
 }

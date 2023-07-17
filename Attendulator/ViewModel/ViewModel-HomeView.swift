@@ -16,13 +16,34 @@ extension HomeView{
         @Published var selectedSubject: Subject?
         @Published var progress: Float = 0.15
         
-        func percentCompleted(sem: Semester) -> Double{
+        func percentCompleted(sem: Semester) -> String{
             let total = Double(sem.totalLectures)
             let attended = Double(sem.attendedLectures)
+            let percent = attended/total
+            return "\(String(format: "%.2f",percent * 100))%"
+        }
+        
+        func semesterCompletionPercentage(sem: Semester) -> Float{
+            let total = Float(sem.totalLectures)
+            let attended = Float(sem.attendedLectures)
             return attended/total
         }
         
-        
+        func subjectCompletionPercentage(sem: Semester, sub: Subject) -> Float{
+            var total = 0
+            var attended = 0
+            
+            for lecture in sem.allLectures{
+                if lecture.subject == sub{
+                    total += 1
+                    if lecture.attended {
+                        attended += 1
+                    }
+                }
+            }
+            
+            return Float(attended) / Float(total)
+        }
         
     }
 }

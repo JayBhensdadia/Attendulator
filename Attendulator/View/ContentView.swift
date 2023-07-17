@@ -10,9 +10,11 @@ import SwiftUI
 struct ContentView: View {
     
     @StateObject var vm = ViewModel()
+    @StateObject var user = User()
     
     var body: some View {
         TabView{
+            
             HomeView()
                 .tabItem {
                     Label("Home", systemImage: "house")
@@ -28,22 +30,29 @@ struct ContentView: View {
                     Label("Schedule", systemImage: "calendar")
                 }
             
-            AllLecturesView()
-                .tabItem {
-                    Label("All Lectures", systemImage: "list.bullet")
-                }
+//            AllLecturesView()
+//                .tabItem {
+//                    Label("All Lectures", systemImage: "list.bullet")
+//                }
+//            
+//            AttendedLecturesView()
+//                .tabItem{
+//                    Label("Attended", systemImage: "checkmark.circle.fill")
+//                }
             
-            AttendedLecturesView()
-                .tabItem{
-                    Label("Attended", systemImage: "checkmark.circle.fill")
-                }
+//            SettingsView()
+//                .tabItem {
+//                    Label("Settings", systemImage: "person.fill")
+//                }
             
-            SettingsView()
+            UserDetailsView()
+                
                 .tabItem {
-                    Label("Settings", systemImage: "person.fill")
+                    Label("User Details", systemImage: "person.fill")
                 }
         }
-        .environmentObject(vm.semester)
+        .environmentObject(user.currentSemester)
+        .environmentObject(user)
         .tint(.cyan)
     }
 }

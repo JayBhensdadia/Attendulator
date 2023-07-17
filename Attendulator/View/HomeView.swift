@@ -11,13 +11,25 @@ struct HomeView: View {
     
     @StateObject var vm = ViewModel()
     @EnvironmentObject var sem: Semester
+    @EnvironmentObject var user: User
     
     var body: some View {
         NavigationStack{
             VStack(alignment: .leading){
                 
-                Group{
-                    Text(vm.percentCompleted(sem: sem), format: .percent) + Text("Completed")
+                HStack{
+                    ZStack{
+                        CircularProgressView(progress: vm.semesterCompletionPercentage(sem: sem))
+                            .frame(width: 100, height: 100)
+                            .padding(.horizontal)
+                        
+                        Text("Sem \(user.currentSemester.id)")
+                            .font(.title3.bold())
+                    }
+                    VStack{
+                        Text(vm.percentCompleted(sem: sem))
+                        Text("Completed")
+                    }
                 }
                 .font(.largeTitle.bold())
                 .frame(maxWidth: .infinity)
@@ -53,7 +65,7 @@ struct HomeView: View {
                                 vm.showingSubjectDetailVIew = true
                             }label: {
                                 ZStack{
-                                    CircularProgressView(progress: $vm.progress)
+                                    CircularProgressView(progress: vm.subjectCompletionPercentage(sem: sem, sub: subject))
                                         .frame(width: 100,height: 100)
                                         .padding()
                                     
@@ -86,5 +98,6 @@ struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
             .environmentObject(Semester())
+            .environmentObject(User())
     }
 }
