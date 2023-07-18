@@ -31,7 +31,11 @@ struct UserDetailsView: View {
                 
                 Section("Subjects"){
                     ForEach(user.currentSemester.subjects){ subject in
-                        Text(subject.shortName)
+                        NavigationLink{
+                            SubjectDetailView(subject: subject)
+                        }label: {
+                            Text(subject.shortName)
+                        }
                     }
                     Button{
                         

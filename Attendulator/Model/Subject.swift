@@ -7,8 +7,9 @@
 
 import Foundation
 
+
 struct Subject: Hashable, Identifiable{
-    let id = UUID().uuidString
+    var id = UUID().uuidString
     var shortName: String
     var fullName: String
 

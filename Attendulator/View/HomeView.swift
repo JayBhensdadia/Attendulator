@@ -13,75 +13,124 @@ struct HomeView: View {
     @EnvironmentObject var sem: Semester
     @EnvironmentObject var user: User
     
+    var todaysLectures: [Lecture]{
+        var lecs = [Lecture]()
+        for lecture in sem.allLectures{
+            if lecture.date! <= Date(){
+                lecs.append(lecture)
+            }
+        }
+        return lecs
+    }
+    
     var body: some View {
         NavigationStack{
-            VStack(alignment: .leading){
-                
-                HStack{
-                    ZStack{
-                        CircularProgressView(progress: vm.semesterCompletionPercentage(sem: sem))
-                            .frame(width: 100, height: 100)
-                            .padding(.horizontal)
-                        
-                        Text("Sem \(user.currentSemester.id)")
-                            .font(.title3.bold())
-                    }
-                    VStack{
-                        Text(vm.percentCompleted(sem: sem))
-                        Text("Completed")
-                            .font(.headline.bold())
-                    }
-                }
-                .font(.largeTitle.bold())
-                .frame(maxWidth: .infinity)
-                .frame(height: 200)
-                .background(.cyan.gradient.opacity(0.2))
-                .clipShape(RoundedRectangle(cornerRadius: 15))
-                .padding()
-                
-                HStack{
-                    Text(sem.subjects.count == 0 ? "Add Subjects!" : " 📚 Subjects")
-                        .font(.title2.bold())
-                        //.padding()
+            ScrollView{
+                VStack(alignment: .leading){
                     
-                    Spacer()
+                    HStack{
+                        ZStack{
+                            CircularProgressView(progress: vm.semesterCompletionPercentage(sem: sem))
+                                .frame(width: 100, height: 100)
+                                .padding(.horizontal)
+                            
+                            Text("Sem \(user.currentSemester.id)")
+                                .font(.title3.bold())
+                        }
+                        VStack{
+                            Text(vm.percentCompleted(sem: sem))
+                            Text("Completed")
+                                .font(.headline.bold())
+                        }
+                    }
+                    .font(.largeTitle.bold())
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 200)
+                    .background(.cyan.gradient.opacity(0.2))
+                    .clipShape(RoundedRectangle(cornerRadius: 15))
+                    .padding()
                     
-                    Button{
-                        vm.showingAddSubjectView = true
-                    }label: {
-                        Image(systemName: "plus.circle")
-                            .foregroundColor(.cyan)
-                            .font(.largeTitle)
+                    HStack{
+                        Text(sem.subjects.count == 0 ? "Add Subjects!" : " 📚 Subjects")
+                            .font(.title2.bold())
                             //.padding()
+                        
+                        Spacer()
+                        
+                        Button{
+                            vm.showingAddSubjectView = true
+                        }label: {
+                            Image(systemName: "plus.circle")
+                                .foregroundColor(.cyan)
+                                .font(.largeTitle)
+                                //.padding()
+                        }
+                        
                     }
+                    .padding(.horizontal)
                     
-                }
-                .padding(.horizontal)
-                
-                ScrollView{
-                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 150))]){
-                        ForEach(sem.subjects){ subject in
-                            Button{
-                                vm.selectedSubject = subject
-                                vm.showingSubjectDetailVIew = true
-                            }label: {
-                                ZStack{
-                                    CircularProgressView(progress: vm.subjectCompletionPercentage(sem: sem, sub: subject))
-                                        .frame(width: 100,height: 100)
-                                        .padding()
-                                    
-                                    Text(subject.shortName)
-                                        .font(.title3.bold())
+                    ScrollView(.horizontal){
+                        HStack{
+                            ForEach(sem.subjects){ subject in
+                                Button{
+                                    vm.selectedSubject = subject
+                                    vm.showingSubjectDetailVIew = true
+                                }label: {
+                                    ZStack{
+                                        CircularProgressView(progress: vm.subjectCompletionPercentage(sem: sem, sub: subject))
+                                            .frame(width: 100,height: 100)
+                                            .padding()
+                                        
+                                        Text(subject.shortName)
+                                            .font(.title3.bold())
+                                    }
                                 }
+                                .foregroundColor(.primary)
                             }
-                            .foregroundColor(.primary)
+                        }
+                        
+                        
+                    }
+                    .padding(.horizontal)
+                    
+                    Text(vm.todayTitle)
+                        .font(.title2.bold())
+                        .padding()
+                    
+                    ScrollView{
+                        LazyVStack{
+                            ForEach(todaysLectures){ lecture in
+                                HStack{
+                                    Button{
+                                        vm.markAttended(semester: sem, lecId: lecture.id)
+                                    }label: {
+                                        Image(systemName:  lecture.attended ? "checkmark.circle.fill": "circle")
+                                    }
+                                    
+                                    //Spacer()
+                                    
+                                    VStack(alignment: .leading){
+                                        Text( lecture.subject.shortName)
+                                        Text( lecture.date!.formatted(date: .abbreviated, time: .omitted))
+                                    }
+                                    
+                                    Spacer()
+                                    
+                                    Text("\(lecture.startHour):\(lecture.startMinute) to \(lecture.endHour):\(lecture.endMinute)")
+                                }
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .background(.cyan.gradient.opacity(0.2))
+                                .clipShape(RoundedRectangle(cornerRadius: 15))
+                                .padding(.horizontal)
+                            }
                         }
                     }
                     
+                    Spacer()
+                    
                     
                 }
-                .padding()
-                
                 
             }
             .navigationTitle("Home")

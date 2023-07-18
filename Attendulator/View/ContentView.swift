@@ -20,10 +20,10 @@ struct ContentView: View {
                     Label("Home", systemImage: "house")
                 }
             
-            TodaysView()
-                .tabItem {
-                    Label("Today",systemImage: "clock.fill")
-                }
+//            TodaysView()
+//                .tabItem {
+//                    Label("Today",systemImage: "clock.fill")
+//                }
             
             ScheduleView()
                 .tabItem {
@@ -46,7 +46,6 @@ struct ContentView: View {
 //                }
             
             UserDetailsView()
-                
                 .tabItem {
                     Label("User Details", systemImage: "person.fill")
                 }

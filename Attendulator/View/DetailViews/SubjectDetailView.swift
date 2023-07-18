@@ -27,7 +27,7 @@ struct SubjectDetailView: View {
         var arr = [Lecture]()
         var count = 0
         for lec in sem.allLectures{
-            if lec.subject == subject{
+            if lec.subject == subject && !lec.attended{
                 arr.append(lec)
                 count+=1
                 

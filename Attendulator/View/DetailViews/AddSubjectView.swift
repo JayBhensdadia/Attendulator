@@ -11,6 +11,7 @@ import SwiftUI
 
 struct AddSubjectView: View {
     @EnvironmentObject var sem: Semester
+    @EnvironmentObject var user: User
     @State var shortName = ""
     @State var longName = ""
     @Environment(\.dismiss) var dismiss
@@ -25,7 +26,9 @@ struct AddSubjectView: View {
             .toolbar{
                 Button("Save"){
                     let newSubject = Subject(shortName: shortName, fullName: longName)
+                    
                     sem.subjects.append(newSubject)
+                    user.objectWillChange.send()
                     dismiss()
                 }
             }
@@ -37,5 +40,6 @@ struct AddSubjectView_Previews: PreviewProvider {
     static var previews: some View {
         AddSubjectView()
             .environmentObject(Semester())
+            .environmentObject(User())
     }
 }

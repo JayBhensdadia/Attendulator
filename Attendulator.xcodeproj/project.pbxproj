@@ -96,7 +96,9 @@
 				494E5B922A645FA600577BAB /* AttendulatorApp.swift */,
 				494E5BA02A6460F700577BAB /* Model */,
 				494E5BA12A6460FD00577BAB /* View */,
+				49B78C8F2A6632FB005D847E /* Archived */,
 				494E5BA22A64610500577BAB /* ViewModel */,
+				49B78C902A663315005D847E /* Archived */,
 				494E5B962A645FA800577BAB /* Assets.xcassets */,
 				494E5B982A645FA800577BAB /* Preview Content */,
 			);
@@ -130,9 +132,7 @@
 				494E5BAD2A6464C900577BAB /* HomeView.swift */,
 				494E5BBD2A646B8400577BAB /* ScheduleView.swift */,
 				494E5BC12A646C3400577BAB /* AllLecturesView.swift */,
-				494E5BC52A646CC900577BAB /* TodaysView.swift */,
 				494E5BC92A646D9F00577BAB /* AttendedLecturesView.swift */,
-				494E5BCB2A646E0B00577BAB /* SettingsView.swift */,
 				49F5856C2A6594E600890C0B /* UserDetailsView.swift */,
 				494E5BB82A646AA400577BAB /* DetailViews */,
 				494E5BB12A6466AE00577BAB /* CustomViews */,
@@ -147,7 +147,6 @@
 				494E5BAF2A6464DA00577BAB /* ViewModel-HomeView.swift */,
 				494E5BBF2A646B9A00577BAB /* ViewModel-ScheduleView.swift */,
 				494E5BC32A646C4B00577BAB /* ViewModel-AllLecturesView.swift */,
-				494E5BC72A646CD700577BAB /* ViewModel-TodaysView.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -168,6 +167,24 @@
 				494E5BB92A646ADE00577BAB /* AddSubjectView.swift */,
 			);
 			path = DetailViews;
+			sourceTree = "<group>";
+		};
+		49B78C8F2A6632FB005D847E /* Archived */ = {
+			isa = PBXGroup;
+			children = (
+				494E5BCB2A646E0B00577BAB /* SettingsView.swift */,
+				494E5BC52A646CC900577BAB /* TodaysView.swift */,
+			);
+			path = Archived;
+			sourceTree = "<group>";
+		};
+		49B78C902A663315005D847E /* Archived */ = {
+			isa = PBXGroup;
+			children = (
+				494E5BC72A646CD700577BAB /* ViewModel-TodaysView.swift */,
+			);
+			name = Archived;
+			path = ViewModel/Archived;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

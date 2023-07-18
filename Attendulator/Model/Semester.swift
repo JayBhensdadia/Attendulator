@@ -9,7 +9,7 @@ import Foundation
 
 class Semester:  ObservableObject, Identifiable, Hashable, Equatable {
     
-
+    
     @Published var id: Int
     @Published var schedule: Schedule
     @Published var allLectures: [Lecture]
@@ -35,8 +35,10 @@ class Semester:  ObservableObject, Identifiable, Hashable, Equatable {
         allLectures = []
         subjects = [
             
-//            Subject(shortName: "Sub 1", fullName: "Subject 1"),
-//            Subject(shortName: "Sub 2", fullName: "Subject 2"),
+            //            Subject(shortName: "Sub 1", fullName: "Subject 1"),
+            //            Subject(shortName: "Sub 2", fullName: "Subject 2"),
+            //            Subject(shortName: "Sub 3", fullName: "Subject 3"),
+            //            Subject(shortName: "Sub 4", fullName: "Subject 4")
             
         ]
     }
@@ -58,12 +60,12 @@ class Semester:  ObservableObject, Identifiable, Hashable, Equatable {
     }
     
     static func == (lhs: Semester, rhs: Semester) -> Bool {
-            return lhs.id == rhs.id
-        }
-        
-        func hash(into hasher: inout Hasher) {
-            hasher.combine(id)
-        }
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
     
     
     func generateLectures(semester: Semester){

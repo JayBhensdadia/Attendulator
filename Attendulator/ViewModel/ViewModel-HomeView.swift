@@ -45,5 +45,20 @@ extension HomeView{
             return Float(attended) / Float(total)
         }
         
+        
+        var todayTitle: String{
+            Date().formatted(date: .abbreviated, time: .omitted)
+        }
+
+        
+        func markAttended(semester: Semester, lecId: String){
+            for i in 0..<semester.allLectures.count{
+                if semester.allLectures[i].id == lecId{
+                    semester.allLectures[i].attended = true
+                    semester.lecturesBuffer.append(semester.allLectures[i])
+                }
+            }
+        }
+        
     }
 }
