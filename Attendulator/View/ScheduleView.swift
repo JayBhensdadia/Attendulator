@@ -229,7 +229,9 @@ struct ScheduleView: View {
                 }
             }
             .alert("Are you sure?", isPresented: $showingConfirmationAlert) {
+                Button("Cancel",role: .cancel){}
                 Button("Ok"){}
+                
             }message: {
                 Text("Make sure you have added the schedule correctly, because changing it will result in loosing your attended data")
             }
