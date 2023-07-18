@@ -82,7 +82,12 @@ class Semester:  ObservableObject, Identifiable, Hashable, Equatable {
             let lecs = getLecturesOftheDay(semester: semester, weekday: weekday)
             
             for i in 0..<lecs.count{
+                
+                
+                
                 let newLecture = Lecture(subject: lecs[i].subject, startHour: lecs[i].startHour, startMinute: lecs[i].startMinute, endHour: lecs[i].endHour, endMinute: lecs[i].endMinute, date: date)
+                
+                
                 
                 semester.allLectures.append(newLecture)
             }

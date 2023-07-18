@@ -86,6 +86,10 @@ struct HomeView: View {
                                     }
                                 }
                                 .foregroundColor(.primary)
+                                .contextMenu{
+                                    Button("Edit"){}
+                                    Button("Delete"){}
+                                }
                             }
                         }
                         
@@ -116,7 +120,9 @@ struct HomeView: View {
                                     
                                     Spacer()
                                     
-                                    Text("\(lecture.startHour):\(lecture.startMinute) to \(lecture.endHour):\(lecture.endMinute)")
+                                    Text("\(String(format: "%02d",lecture.startHour+1)):\(String(format: "%02d",lecture.startMinute)) to \(String(format: "%02d",lecture.endHour+1)):\(String(format: "%02d",lecture.endMinute))")
+                                    
+
                                 }
                                 .padding()
                                 .frame(maxWidth: .infinity)

@@ -72,7 +72,7 @@ struct SubjectDetailView: View {
                     }
                 
                     HStack{
-                        Text(subjectCompletionPercentage, format: .percent)
+                        Text("\(String(format: "%.2f",subjectCompletionPercentage * 100))%")
                             .font(.largeTitle.bold())
                         Text(" Completed")
                     }

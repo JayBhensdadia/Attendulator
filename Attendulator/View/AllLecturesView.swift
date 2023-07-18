@@ -29,7 +29,7 @@ struct AllLecturesView: View {
                         
                         Spacer()
                         
-                        Text("\(lecture.startHour+1):\(lecture.startMinute) to \(lecture.endHour+1):\(lecture.endMinute)")
+                        Text("\(String(format: "%02d",lecture.startHour+1)):\(String(format: "%02d",lecture.startMinute)) to \(String(format: "%02d",lecture.endHour+1)):\(String(format: "%02d",lecture.endMinute))")
                     }
                 }
             }
