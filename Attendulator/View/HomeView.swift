@@ -13,6 +13,8 @@ struct HomeView: View {
     @EnvironmentObject var sem: Semester
     @EnvironmentObject var user: User
     
+    
+    
     var todaysLectures: [Lecture]{
         var lecs = [Lecture]()
         for lecture in sem.allLectures{
@@ -70,6 +72,8 @@ struct HomeView: View {
                     .padding(.horizontal)
                     
                     ScrollView(.horizontal){
+                        
+                        
                         HStack{
                             ForEach(sem.subjects){ subject in
                                 Button{

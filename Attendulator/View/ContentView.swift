@@ -12,13 +12,17 @@ struct ContentView: View {
     @StateObject var vm = ViewModel()
     @StateObject var user = User()
     
+    
+    @State var selectedView = "HomeView"
+    
     var body: some View {
-        TabView{
+        TabView(selection: $selectedView){
             
             HomeView()
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
+                .tag("HomeView")
             
 //            TodaysView()
 //                .tabItem {
@@ -29,6 +33,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Schedule", systemImage: "calendar")
                 }
+                .tag("ScheduleView")
             
 //            AllLecturesView()
 //                .tabItem {
@@ -49,10 +54,16 @@ struct ContentView: View {
                 .tabItem {
                     Label("User Details", systemImage: "person.fill")
                 }
+                .tag("UserDetailsView")
         }
         .environmentObject(user.currentSemester)
         .environmentObject(user)
         .tint(.cyan)
+        .onAppear {
+            if user.currentSemester.subjects.isEmpty{
+                selectedView = "UserDetailsView"
+            }
+        }
     }
 }
 
