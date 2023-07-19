@@ -27,7 +27,7 @@ struct ScheduleView: View {
         NavigationStack{
             
             ZStack{
-                ScrollView(.horizontal){
+                ScrollView(.horizontal, showsIndicators: false){
 
                     LazyHStack{
                         

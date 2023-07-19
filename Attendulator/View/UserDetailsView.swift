@@ -82,6 +82,7 @@ struct UserDetailsView: View {
                 AddSubjectView()
             }
             .onDisappear(perform: user.saveData)
+            .scrollIndicators(.hidden)
         }
         
     }

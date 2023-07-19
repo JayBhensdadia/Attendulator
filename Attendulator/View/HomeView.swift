@@ -30,7 +30,7 @@ struct HomeView: View {
     
     var body: some View {
         NavigationStack{
-            ScrollView{
+            ScrollView(showsIndicators: false){
                 VStack(alignment: .leading){
                     
                     HStack{
@@ -74,7 +74,7 @@ struct HomeView: View {
                     }
                     .padding(.horizontal)
                     
-                    ScrollView(.horizontal){
+                    ScrollView(.horizontal,showsIndicators: false){
                         
                         
                         HStack{
@@ -108,7 +108,7 @@ struct HomeView: View {
                         .font(.title2.bold())
                         .padding()
                     
-                    ScrollView{
+                    ScrollView(showsIndicators: false){
                         LazyVStack{
                             ForEach(todaysLectures){ lecture in
                                 
