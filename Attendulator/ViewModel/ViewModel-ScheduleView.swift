@@ -21,6 +21,9 @@ extension ScheduleView{
         
         
         func reGenerateLectures(semester: Semester){
+            
+            //MARK: problem! when removing item from schedule and then regenerating still adds those lectures ( adding new items is handled properly)
+            
             //semester.allLectures = [Lecture]()
             
             //semester.allLectures.append(contentsOf: semester.lecturesBuffer)

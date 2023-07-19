@@ -13,7 +13,7 @@ struct ScheduleView: View {
     @EnvironmentObject var user : User
     @StateObject var vm = ViewModel()
     
-    
+    @State var showingConfirmationAlert = false
     
     var firstScheduleEdit : Bool{
         if sem.allLectures.isEmpty{
@@ -46,15 +46,17 @@ struct ScheduleView: View {
                                     
                                    
                                     HStack{
-                                        Button{
-                                            sem.schedule.monday.remove(at: sem.schedule.monday.count - 1)
-                                        }label: {
-                                            Image(systemName: "trash.circle")
-                                                .font(.title)
+                                        if firstScheduleEdit{
+                                            Button{
+                                                sem.schedule.monday.remove(at: sem.schedule.monday.count - 1)
+                                            }label: {
+                                                Image(systemName: "trash.circle")
+                                                    .font(.title)
+                                            }
+                                            .disabled(sem.schedule.monday.count < 1)
+                                            .foregroundColor(.cyan)
+                                            .padding()
                                         }
-                                        .disabled(sem.schedule.monday.count < 1)
-                                        .foregroundColor(.cyan)
-                                        .padding()
                                         
                                         
                                         Button{
@@ -88,15 +90,17 @@ struct ScheduleView: View {
                                     }
                                     
                                     HStack{
-                                        Button{
-                                            sem.schedule.tuesday.remove(at: sem.schedule.tuesday.count - 1)
-                                        }label: {
-                                            Image(systemName: "trash.circle")
-                                                .font(.title)
+                                        if firstScheduleEdit{
+                                            Button{
+                                                sem.schedule.tuesday.remove(at: sem.schedule.tuesday.count - 1)
+                                            }label: {
+                                                Image(systemName: "trash.circle")
+                                                    .font(.title)
+                                            }
+                                            .disabled(sem.schedule.tuesday.count < 1)
+                                            .foregroundColor(.cyan)
+                                            .padding()
                                         }
-                                        .disabled(sem.schedule.tuesday.count < 1)
-                                        .foregroundColor(.cyan)
-                                        .padding()
                                         
                                         
                                         Button{
@@ -131,15 +135,17 @@ struct ScheduleView: View {
                                     }
                                     
                                     HStack{
-                                        Button{
-                                            sem.schedule.wednesday.remove(at: sem.schedule.wednesday.count - 1)
-                                        }label: {
-                                            Image(systemName: "trash.circle")
-                                                .font(.title)
+                                        if firstScheduleEdit{
+                                            Button{
+                                                sem.schedule.wednesday.remove(at: sem.schedule.wednesday.count - 1)
+                                            }label: {
+                                                Image(systemName: "trash.circle")
+                                                    .font(.title)
+                                            }
+                                            .disabled(sem.schedule.wednesday.count < 1)
+                                            .foregroundColor(.cyan)
+                                            .padding()
                                         }
-                                        .disabled(sem.schedule.wednesday.count < 1)
-                                        .foregroundColor(.cyan)
-                                        .padding()
                                         
                                         
                                         Button{
@@ -174,15 +180,17 @@ struct ScheduleView: View {
                                     }
                                     
                                     HStack{
-                                        Button{
-                                            sem.schedule.thursday.remove(at: sem.schedule.thursday.count - 1)
-                                        }label: {
-                                            Image(systemName: "trash.circle")
-                                                .font(.title)
+                                        if firstScheduleEdit{
+                                            Button{
+                                                sem.schedule.thursday.remove(at: sem.schedule.thursday.count - 1)
+                                            }label: {
+                                                Image(systemName: "trash.circle")
+                                                    .font(.title)
+                                            }
+                                            .disabled(sem.schedule.thursday.count < 1)
+                                            .foregroundColor(.cyan)
+                                            .padding()
                                         }
-                                        .disabled(sem.schedule.thursday.count < 1)
-                                        .foregroundColor(.cyan)
-                                        .padding()
                                         
                                         
                                         Button{
@@ -217,15 +225,17 @@ struct ScheduleView: View {
                                     }
                                     
                                     HStack{
-                                        Button{
-                                            sem.schedule.friday.remove(at: sem.schedule.friday.count - 1)
-                                        }label: {
-                                            Image(systemName: "trash.circle")
-                                                .font(.title)
+                                        if firstScheduleEdit{
+                                            Button{
+                                                sem.schedule.friday.remove(at: sem.schedule.friday.count - 1)
+                                            }label: {
+                                                Image(systemName: "trash.circle")
+                                                    .font(.title)
+                                            }
+                                            .disabled(sem.schedule.friday.count < 1)
+                                            .foregroundColor(.cyan)
+                                            .padding()
                                         }
-                                        .disabled(sem.schedule.friday.count < 1)
-                                        .foregroundColor(.cyan)
-                                        .padding()
                                         
                                         
                                         Button{
@@ -260,15 +270,17 @@ struct ScheduleView: View {
                                     }
                                     
                                     HStack{
-                                        Button{
-                                            sem.schedule.saturday.remove(at: sem.schedule.saturday.count - 1)
-                                        }label: {
-                                            Image(systemName: "trash.circle")
-                                                .font(.title)
+                                        if firstScheduleEdit{
+                                            Button{
+                                                sem.schedule.saturday.remove(at: sem.schedule.saturday.count - 1)
+                                            }label: {
+                                                Image(systemName: "trash.circle")
+                                                    .font(.title)
+                                            }
+                                            .disabled(sem.schedule.saturday.count < 1)
+                                            .foregroundColor(.cyan)
+                                            .padding()
                                         }
-                                        .disabled(sem.schedule.saturday.count < 1)
-                                        .foregroundColor(.cyan)
-                                        .padding()
                                         
                                         
                                         Button{
@@ -307,9 +319,10 @@ struct ScheduleView: View {
             .disabled(sem.subjects.count == 0)
             .toolbar{
                 Button("Save"){
-                    //showingConfirmationAlert = true
+                    
                     
                     if firstScheduleEdit{
+                        showingConfirmationAlert = true
                         vm.generateLectures(semester: sem)
                         //firstScheduleEdit = false
                     }else{
@@ -318,7 +331,13 @@ struct ScheduleView: View {
                     user.saveData()
                 }
             }
-            
+            .alert("Are you sure?", isPresented: $showingConfirmationAlert) {
+                Button("Cancel",role: .cancel){}
+                Button("Ok"){}
+                
+            }message: {
+                Text("Make sure you have added the schedule correctly, because changing might affect the saved data!")
+            }
             
         }
     }
