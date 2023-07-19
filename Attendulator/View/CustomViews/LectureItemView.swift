@@ -13,7 +13,7 @@ struct LectureItemView: View {
     
     @Binding var lecture: Lecture
     @EnvironmentObject var sem: Semester
-
+    
     
     var body: some View {
         VStack(alignment: .leading){
@@ -94,6 +94,9 @@ struct LectureItemView: View {
         .clipShape(RoundedRectangle(cornerRadius: 15))
         .padding(.horizontal)
     }
+    
+    
+    
 }
 
 //struct LectureItemView_Previews: PreviewProvider {

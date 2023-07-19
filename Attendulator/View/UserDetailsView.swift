@@ -37,6 +37,8 @@ struct UserDetailsView: View {
                             Text(subject.shortName)
                         }
                     }
+                    
+                    
                     Button{
                         
                         showingAddSubjectView = true

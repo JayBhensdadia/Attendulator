@@ -19,6 +19,7 @@ extension ScheduleView{
         
         
         
+        
         func reGenerateLectures(semester: Semester){
             //semester.allLectures = [Lecture]()
             

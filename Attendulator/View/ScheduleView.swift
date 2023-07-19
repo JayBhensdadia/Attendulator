@@ -43,14 +43,28 @@ struct ScheduleView: View {
                                         LectureItemView(lecture: $lecture)
                                     }
                                     
-                                    Button{
-                                        sem.schedule.monday.append(vm.addLecture(sem: sem))
-                                    }label: {
-                                        Image(systemName: "plus.circle")
-                                            .font(.largeTitle)
+                                   
+                                    HStack{
+                                        Button{
+                                            sem.schedule.monday.remove(at: sem.schedule.monday.count - 1)
+                                        }label: {
+                                            Image(systemName: "trash.circle")
+                                                .font(.title)
+                                        }
+                                        .disabled(sem.schedule.monday.count < 1)
+                                        .foregroundColor(.cyan)
+                                        .padding()
+                                        
+                                        
+                                        Button{
+                                            sem.schedule.monday.append(vm.addLecture(sem: sem))
+                                        }label: {
+                                            Image(systemName: "plus.circle")
+                                                .font(.title)
+                                        }
+                                        .foregroundColor(.cyan)
+                                        .padding()
                                     }
-                                    .foregroundColor(.cyan)
-                                    .padding()
                                 }
                             }
                         }
@@ -72,14 +86,27 @@ struct ScheduleView: View {
                                         LectureItemView(lecture: $lecture)
                                     }
                                     
-                                    Button{
-                                        sem.schedule.tuesday.append(vm.addLecture(sem: sem))
-                                    }label: {
-                                        Image(systemName: "plus.circle")
-                                            .font(.largeTitle)
+                                    HStack{
+                                        Button{
+                                            sem.schedule.tuesday.remove(at: sem.schedule.tuesday.count - 1)
+                                        }label: {
+                                            Image(systemName: "trash.circle")
+                                                .font(.title)
+                                        }
+                                        .disabled(sem.schedule.tuesday.count < 1)
+                                        .foregroundColor(.cyan)
+                                        .padding()
+                                        
+                                        
+                                        Button{
+                                            sem.schedule.tuesday.append(vm.addLecture(sem: sem))
+                                        }label: {
+                                            Image(systemName: "plus.circle")
+                                                .font(.title)
+                                        }
+                                        .foregroundColor(.cyan)
+                                        .padding()
                                     }
-                                    .foregroundColor(.cyan)
-                                    .padding()
                                 }
                             }
                         }
@@ -102,14 +129,27 @@ struct ScheduleView: View {
                                         LectureItemView(lecture: $lecture)
                                     }
                                     
-                                    Button{
-                                        sem.schedule.wednesday.append(vm.addLecture(sem: sem))
-                                    }label: {
-                                        Image(systemName: "plus.circle")
-                                            .font(.largeTitle)
+                                    HStack{
+                                        Button{
+                                            sem.schedule.wednesday.remove(at: sem.schedule.wednesday.count - 1)
+                                        }label: {
+                                            Image(systemName: "trash.circle")
+                                                .font(.title)
+                                        }
+                                        .disabled(sem.schedule.wednesday.count < 1)
+                                        .foregroundColor(.cyan)
+                                        .padding()
+                                        
+                                        
+                                        Button{
+                                            sem.schedule.wednesday.append(vm.addLecture(sem: sem))
+                                        }label: {
+                                            Image(systemName: "plus.circle")
+                                                .font(.title)
+                                        }
+                                        .foregroundColor(.cyan)
+                                        .padding()
                                     }
-                                    .foregroundColor(.cyan)
-                                    .padding()
                                 }
                             }
                         }
@@ -132,14 +172,27 @@ struct ScheduleView: View {
                                         LectureItemView(lecture: $lecture)
                                     }
                                     
-                                    Button{
-                                        sem.schedule.thursday.append(vm.addLecture(sem: sem))
-                                    }label: {
-                                        Image(systemName: "plus.circle")
-                                            .font(.largeTitle)
+                                    HStack{
+                                        Button{
+                                            sem.schedule.thursday.remove(at: sem.schedule.thursday.count - 1)
+                                        }label: {
+                                            Image(systemName: "trash.circle")
+                                                .font(.title)
+                                        }
+                                        .disabled(sem.schedule.thursday.count < 1)
+                                        .foregroundColor(.cyan)
+                                        .padding()
+                                        
+                                        
+                                        Button{
+                                            sem.schedule.thursday.append(vm.addLecture(sem: sem))
+                                        }label: {
+                                            Image(systemName: "plus.circle")
+                                                .font(.title)
+                                        }
+                                        .foregroundColor(.cyan)
+                                        .padding()
                                     }
-                                    .foregroundColor(.cyan)
-                                    .padding()
                                 }
                             }
                         }
@@ -162,14 +215,27 @@ struct ScheduleView: View {
                                         LectureItemView(lecture: $lecture)
                                     }
                                     
-                                    Button{
-                                        sem.schedule.friday.append(vm.addLecture(sem: sem))
-                                    }label: {
-                                        Image(systemName: "plus.circle")
-                                            .font(.largeTitle)
+                                    HStack{
+                                        Button{
+                                            sem.schedule.friday.remove(at: sem.schedule.friday.count - 1)
+                                        }label: {
+                                            Image(systemName: "trash.circle")
+                                                .font(.title)
+                                        }
+                                        .disabled(sem.schedule.friday.count < 1)
+                                        .foregroundColor(.cyan)
+                                        .padding()
+                                        
+                                        
+                                        Button{
+                                            sem.schedule.friday.append(vm.addLecture(sem: sem))
+                                        }label: {
+                                            Image(systemName: "plus.circle")
+                                                .font(.title)
+                                        }
+                                        .foregroundColor(.cyan)
+                                        .padding()
                                     }
-                                    .foregroundColor(.cyan)
-                                    .padding()
                                 }
                             }
                         }
@@ -192,15 +258,27 @@ struct ScheduleView: View {
                                         LectureItemView(lecture: $lecture)
                                     }
                                     
-                                    Button{
-                                        sem.schedule.saturday.append(vm.addLecture(sem: sem))
-                                    }label: {
-                                        Image(systemName: "plus.circle")
-                                            .font(.largeTitle)
-                                            
+                                    HStack{
+                                        Button{
+                                            sem.schedule.saturday.remove(at: sem.schedule.saturday.count - 1)
+                                        }label: {
+                                            Image(systemName: "trash.circle")
+                                                .font(.title)
+                                        }
+                                        .disabled(sem.schedule.saturday.count < 1)
+                                        .foregroundColor(.cyan)
+                                        .padding()
+                                        
+                                        
+                                        Button{
+                                            sem.schedule.saturday.append(vm.addLecture(sem: sem))
+                                        }label: {
+                                            Image(systemName: "plus.circle")
+                                                .font(.title)
+                                        }
+                                        .foregroundColor(.cyan)
+                                        .padding()
                                     }
-                                    .foregroundColor(.cyan)
-                                    .padding()
                                     
                                 }
                             }
@@ -249,6 +327,8 @@ struct ScheduleView: View {
             
         }
     }
+    
+    
 }
 
 struct ScheduleView_Previews: PreviewProvider {
