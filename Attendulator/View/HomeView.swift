@@ -16,9 +16,12 @@ struct HomeView: View {
     
     
     var todaysLectures: [Lecture]{
+        
+        
+        
         var lecs = [Lecture]()
         for lecture in sem.allLectures{
-            if lecture.date! <= Date(){
+            if lecture.date! > Date().dayBefore && lecture.date! < Date().dayAfter{
                 lecs.append(lecture)
             }
         }
@@ -53,20 +56,20 @@ struct HomeView: View {
                     .padding()
                     
                     HStack{
-                        Text(sem.subjects.count == 0 ? "Add Subjects!" : " 📚 Subjects")
+                        Text(sem.subjects.count == 0 ? "Add Subjects!" : "Subjects")
                             .font(.title2.bold())
                             //.padding()
                         
-                        Spacer()
-                        
-                        Button{
-                            vm.showingAddSubjectView = true
-                        }label: {
-                            Image(systemName: "plus.circle")
-                                .foregroundColor(.cyan)
-                                .font(.largeTitle)
-                                //.padding()
-                        }
+//                        Spacer()
+//
+//                        Button{
+//                            vm.showingAddSubjectView = true
+//                        }label: {
+//                            Image(systemName: "plus.circle")
+//                                .foregroundColor(.cyan)
+//                                .font(.largeTitle)
+//                                //.padding()
+//                        }
                         
                     }
                     .padding(.horizontal)
@@ -108,31 +111,40 @@ struct HomeView: View {
                     ScrollView{
                         LazyVStack{
                             ForEach(todaysLectures){ lecture in
-                                HStack{
-                                    Button{
-                                        vm.markAttended(semester: sem, lecId: lecture.id)
-                                    }label: {
+                                
+                                
+                                Button{
+                                    vm.lectureAttendedToggle(semester: sem, lecId: lecture.id, markAttended: lecture.attended ? false : true)
+                                }label: {
+                                    
+                                    HStack{
+                                        
+                                        
+                                        //Spacer()
+                                        
                                         Image(systemName:  lecture.attended ? "checkmark.circle.fill": "circle")
-                                    }
-                                    
-                                    //Spacer()
-                                    
-                                    VStack(alignment: .leading){
-                                        Text( lecture.subject.shortName)
-                                        Text( lecture.date!.formatted(date: .abbreviated, time: .omitted))
-                                    }
-                                    
-                                    Spacer()
-                                    
-                                    Text("\(String(format: "%02d",lecture.startHour+1)):\(String(format: "%02d",lecture.startMinute)) to \(String(format: "%02d",lecture.endHour+1)):\(String(format: "%02d",lecture.endMinute))")
-                                    
+                                        
+                                        VStack(alignment: .leading){
+                                            Text( lecture.subject.shortName)
+                                            Text( lecture.date!.formatted(date: .abbreviated, time: .omitted))
+                                        }
+                                        
+                                        Spacer()
+                                        
+                                        Text("\(String(format: "%02d",lecture.startHour+1)):\(String(format: "%02d",lecture.startMinute)) to \(String(format: "%02d",lecture.endHour+1)):\(String(format: "%02d",lecture.endMinute))")
+                                        
 
+                                    }
+                                    .padding()
+                                    .foregroundColor(.primary)
+                                    .frame(maxWidth: .infinity)
+                                    .background(.cyan.gradient.opacity(0.2))
+                                    .clipShape(RoundedRectangle(cornerRadius: 15))
+                                    .padding(.horizontal)
+                                    
                                 }
-                                .padding()
-                                .frame(maxWidth: .infinity)
-                                .background(.cyan.gradient.opacity(0.2))
-                                .clipShape(RoundedRectangle(cornerRadius: 15))
-                                .padding(.horizontal)
+                                
+                                
                             }
                         }
                     }

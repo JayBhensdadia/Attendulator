@@ -43,7 +43,7 @@ struct SubjectDetailView: View {
     
     var attendedLectures: [Lecture]{
         var arr = [Lecture]()
-        for lec in sem.allLectures{
+        for lec in sem.lecturesBuffer{
             if lec.subject == subject && lec.attended{
                 arr.append(lec)
             }

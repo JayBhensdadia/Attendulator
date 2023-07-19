@@ -36,9 +36,12 @@ extension HomeView{
             for lecture in sem.allLectures{
                 if lecture.subject == sub{
                     total += 1
-                    if lecture.attended {
-                        attended += 1
-                    }
+                }
+            }
+            
+            for lecture in sem.lecturesBuffer{
+                if lecture.subject == sub{
+                    attended += 1
                 }
             }
             
@@ -49,7 +52,41 @@ extension HomeView{
         var todayTitle: String{
             Date().formatted(date: .abbreviated, time: .omitted)
         }
-
+        
+        
+        func lectureAttendedToggle(semester: Semester, lecId: String, markAttended: Bool){
+            if markAttended{
+                for i in 0..<semester.allLectures.count{
+                    if semester.allLectures[i].id == lecId{
+                        semester.allLectures[i].attended = true
+                        semester.lecturesBuffer.append(semester.allLectures[i])
+                    }
+                }
+            }else{
+                for i in 0..<semester.allLectures.count{
+                    if semester.allLectures[i].id == lecId{
+                        semester.allLectures[i].attended = false
+                        removeLectureFromArray(semester: semester, lecId: semester.allLectures[i].id)
+                    }
+                }
+            }
+        }
+        
+        func removeLectureFromArray(semester: Semester, lecId: String){
+            
+            // find index of element in array
+            var index = 0
+            for i in 0..<semester.lecturesBuffer.count{
+                if semester.lecturesBuffer[i].id == lecId{
+                    index = i
+                    break
+                }
+            }
+            
+            //remove at that index
+            
+            semester.lecturesBuffer.remove(at: index)
+        }
         
         func markAttended(semester: Semester, lecId: String){
             for i in 0..<semester.allLectures.count{

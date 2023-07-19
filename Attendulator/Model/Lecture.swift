@@ -16,4 +16,14 @@ struct Lecture: Hashable, Identifiable{
     var endMinute: Int
     var date: Date?
     var attended: Bool = false
+    
+    var newId: String{
+        var date = date?.formatted(date: .abbreviated, time: .omitted) ?? Date().formatted(date: .abbreviated, time: .omitted)
+        var startTime = "\(startHour)\(startMinute)"
+        var endTime = "\(endHour)\(endMinute)"
+        
+        var sub = subject.fullName
+        
+        return "\(sub)\(date)\(startTime)\(endTime)"
+    }
 }

@@ -49,14 +49,15 @@ class Semester:  ObservableObject, Identifiable, Hashable, Equatable {
     }
     
     var attendedLectures: Int{
-        var count = 0
-        for lec in allLectures{
-            if lec.attended{
-                count += 1
-            }
-        }
-        
-        return count
+        lecturesBuffer.count
+//        var count = 0
+//        for lec in allLectures{
+//            if lec.attended{
+//                count += 1
+//            }
+//        }
+//
+//        return count
     }
     
     static func == (lhs: Semester, rhs: Semester) -> Bool {

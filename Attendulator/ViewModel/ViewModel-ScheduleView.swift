@@ -18,12 +18,48 @@ extension ScheduleView{
         }
         
         
+        
+        func reGenerateLectures(semester: Semester){
+            //semester.allLectures = [Lecture]()
+            
+            //semester.allLectures.append(contentsOf: semester.lecturesBuffer)
+            
+            let start = semester.startDate
+            let end = semester.endDate
+            
+            for date in stride(from: start, to: end, by: (24*3600)){
+                let weekday = Calendar.current.component(.weekday, from: date)
+                
+                let lecs = getLecturesOftheDay(semester: semester, weekday: weekday)
+                
+                for i in 0..<lecs.count{
+                    let newLecture = Lecture(subject: lecs[i].subject, startHour: lecs[i].startHour, startMinute: lecs[i].startMinute, endHour: lecs[i].endHour, endMinute: lecs[i].endMinute, date: date)
+                
+                    if !isLecturePresent(semester: semester, lec: newLecture){
+                        semester.allLectures.append(newLecture)
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+        func isLecturePresent(semester: Semester, lec: Lecture) -> Bool{
+            for lecture in semester.allLectures{
+                if lec.newId == lecture.newId{
+                    return true
+                }
+            }
+            return false
+        }
+        
         func generateLectures(semester: Semester){
             
             
             semester.allLectures = [Lecture]()
             
-            let start = Date()
+            let start = semester.startDate
             let end = semester.endDate
             
             for date in stride(from: start, to: end, by: (24*3600)){

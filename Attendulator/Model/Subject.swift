@@ -12,5 +12,8 @@ struct Subject: Hashable, Identifiable{
     var id = UUID().uuidString
     var shortName: String
     var fullName: String
+    
+    
+    
 
 }

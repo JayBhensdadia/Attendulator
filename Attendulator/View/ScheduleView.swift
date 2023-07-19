@@ -14,16 +14,20 @@ struct ScheduleView: View {
     
     @State var showingConfirmationAlert = false
     
+    var firstScheduleEdit : Bool{
+        if sem.allLectures.isEmpty{
+            return true
+        }
+        return false
+    }
+    
     var body: some View {
+        
         NavigationStack{
-            
-            
             
             ZStack{
                 ScrollView(.horizontal){
-                    
-                    
-                    
+
                     LazyHStack{
                         
                         //MARK: Monday
@@ -225,7 +229,14 @@ struct ScheduleView: View {
             .toolbar{
                 Button("Save"){
                     showingConfirmationAlert = true
-                    vm.generateLectures(semester: sem)
+                    
+                    if firstScheduleEdit{
+                        vm.generateLectures(semester: sem)
+                        //firstScheduleEdit = false
+                    }else{
+                        vm.reGenerateLectures(semester: sem)
+                    }
+                    
                 }
             }
             .alert("Are you sure?", isPresented: $showingConfirmationAlert) {
