@@ -10,9 +10,10 @@ import SwiftUI
 struct ScheduleView: View {
     
     @EnvironmentObject var sem : Semester
+    @EnvironmentObject var user : User
     @StateObject var vm = ViewModel()
     
-    @State var showingConfirmationAlert = false
+    
     
     var firstScheduleEdit : Bool{
         if sem.allLectures.isEmpty{
@@ -306,7 +307,7 @@ struct ScheduleView: View {
             .disabled(sem.subjects.count == 0)
             .toolbar{
                 Button("Save"){
-                    showingConfirmationAlert = true
+                    //showingConfirmationAlert = true
                     
                     if firstScheduleEdit{
                         vm.generateLectures(semester: sem)
@@ -314,16 +315,10 @@ struct ScheduleView: View {
                     }else{
                         vm.reGenerateLectures(semester: sem)
                     }
-                    
+                    user.saveData()
                 }
             }
-            .alert("Are you sure?", isPresented: $showingConfirmationAlert) {
-                Button("Cancel",role: .cancel){}
-                Button("Ok"){}
-                
-            }message: {
-                Text("Make sure you have added the schedule correctly, because changing it will result in loosing your attended data")
-            }
+            
             
         }
     }
@@ -335,6 +330,7 @@ struct ScheduleView_Previews: PreviewProvider {
     static var previews: some View {
         ScheduleView()
             .environmentObject(Semester())
+            .environmentObject(User())
     }
 }
 

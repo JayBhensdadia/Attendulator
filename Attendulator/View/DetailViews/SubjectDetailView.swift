@@ -102,6 +102,9 @@ struct SubjectDetailView: View {
                     
                 }
                 .padding()
+                
+                
+                
             }
             .toolbar{
                 Button("Back"){
@@ -110,6 +113,8 @@ struct SubjectDetailView: View {
             }
         }
     }
+    
+    
 }
 
 struct SubjectDetailView_Previews: PreviewProvider {

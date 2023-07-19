@@ -70,6 +70,8 @@ extension HomeView{
                     }
                 }
             }
+            
+            
         }
         
         func removeLectureFromArray(semester: Semester, lecId: String){

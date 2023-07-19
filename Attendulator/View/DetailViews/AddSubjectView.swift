@@ -15,6 +15,23 @@ struct AddSubjectView: View {
     @State var shortName = ""
     @State var longName = ""
     @Environment(\.dismiss) var dismiss
+    @State var showingAlert = false
+    
+    var newSubject: Subject{
+        Subject(shortName: shortName, fullName: longName)
+    }
+    
+    var subjectAlreadyExist: Bool{
+        
+        for subject in sem.subjects{
+            if subject.shortName == shortName && subject.fullName == longName{
+                return true
+            }
+        }
+        
+        return false
+    }
+    
     
     var body: some View {
         NavigationStack{
@@ -25,12 +42,26 @@ struct AddSubjectView: View {
             .navigationTitle("Add Subject")
             .toolbar{
                 Button("Save"){
-                    let newSubject = Subject(shortName: shortName, fullName: longName)
+                    //let newSubject = Subject(shortName: shortName, fullName: longName)
                     
-                    sem.subjects.append(newSubject)
-                    user.objectWillChange.send()
-                    dismiss()
+                    if subjectAlreadyExist{
+                        showingAlert = true
+                    }else{
+                        sem.subjects.append(newSubject)
+                        user.saveData()
+                        user.objectWillChange.send()
+                        dismiss()
+                    }
+                    
                 }
+                .disabled(shortName.isEmpty || longName.isEmpty)
+            }
+            .alert("Subject already exist",isPresented: $showingAlert) {
+                Button("Ok"){
+                    shortName = ""
+                    longName = ""
+                }
+                
             }
         }
     }

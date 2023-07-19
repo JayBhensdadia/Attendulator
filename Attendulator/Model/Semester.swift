@@ -7,7 +7,10 @@
 
 import Foundation
 
-class Semester:  ObservableObject, Identifiable, Hashable, Equatable {
+class Semester:  ObservableObject, Identifiable, Hashable, Equatable, Codable{
+    
+    
+    
     
     
     @Published var id: Int
@@ -26,6 +29,41 @@ class Semester:  ObservableObject, Identifiable, Hashable, Equatable {
         }
     }
     @Published var lecturesBuffer = [Lecture]()
+    
+    
+    enum CodingKeys: CodingKey{
+        
+        case id
+        case schedule
+        case allLectures
+        case subjects
+        case lecturesBuffer
+        case startDate
+        case endDate
+
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(schedule, forKey: .schedule)
+        try container.encode(allLectures, forKey: .allLectures)
+        try container.encode(subjects, forKey: .subjects)
+        try container.encode(lecturesBuffer, forKey: .lecturesBuffer)
+        try container.encode(startDate, forKey: .startDate)
+                try container.encode(endDate, forKey: .endDate)
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(Int.self, forKey: .id)
+        schedule = try container.decode(Schedule.self, forKey: .schedule)
+        allLectures = try container.decode([Lecture].self, forKey: .allLectures)
+        subjects = try container.decode([Subject].self, forKey: .subjects)
+        lecturesBuffer = try container.decode([Lecture].self, forKey: .lecturesBuffer)
+        startDate = try container.decode(Date.self, forKey: .startDate)
+        endDate = try container.decode(Date.self, forKey: .endDate)
+    }
     
     init(){
         id = Int.random(in: 1...8)

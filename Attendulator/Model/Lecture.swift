@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Lecture: Hashable, Identifiable{
+struct Lecture: Hashable, Identifiable,Codable{
     let id = UUID().uuidString
     var subject: Subject
     var startHour: Int

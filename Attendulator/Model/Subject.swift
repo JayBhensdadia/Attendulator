@@ -8,11 +8,14 @@
 import Foundation
 
 
-struct Subject: Hashable, Identifiable{
-    var id = UUID().uuidString
+struct Subject: Hashable, Identifiable, Codable{
+    
     var shortName: String
     var fullName: String
     
+    var id: String{
+        return "\(shortName)\(fullName)"
+    }
     
     
 

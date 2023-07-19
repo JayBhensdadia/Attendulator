@@ -26,6 +26,7 @@ struct UserDetailsView: View {
                     DatePicker("Start Date", selection: $user.currentSemester.startDate, displayedComponents: .date)
                     DatePicker("End Date", selection: $user.currentSemester.endDate, displayedComponents: .date)
                     
+                    
                         
                 }
                 
@@ -53,13 +54,13 @@ struct UserDetailsView: View {
                     NavigationLink{
                         AllLecturesView()
                     }label: {
-                        Text("All Lectures : \(user.currentSemester.allLectures.count)")
+                        Text("All Lectures")
                     }
                     
                     NavigationLink{
                         AttendedLecturesView()
                     }label: {
-                        Text("Attended Lectures: \(user.currentSemester.lecturesBuffer.count)")
+                        Text("Attended Lectures")
                     }
                 }
                 
@@ -67,7 +68,7 @@ struct UserDetailsView: View {
                 
                 Section("Renew semester"){
                     
-                    Button{
+                    Button(role: .destructive){
                         user.currentSemester = Semester()
                     }label: {
                         Text("Renew Semester")
@@ -80,7 +81,7 @@ struct UserDetailsView: View {
             .sheet(isPresented: $showingAddSubjectView) {
                 AddSubjectView()
             }
-            
+            .onDisappear(perform: user.saveData)
         }
         
     }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Schedule: Hashable{
+struct Schedule: Hashable,Codable{
     var monday: [Lecture]
     var tuesday: [Lecture]
     var wednesday: [Lecture]

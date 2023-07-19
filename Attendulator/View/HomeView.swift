@@ -115,6 +115,7 @@ struct HomeView: View {
                                 
                                 Button{
                                     vm.lectureAttendedToggle(semester: sem, lecId: lecture.id, markAttended: lecture.attended ? false : true)
+                                    user.saveData()
                                 }label: {
                                     
                                     HStack{
