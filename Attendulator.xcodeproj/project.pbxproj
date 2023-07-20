@@ -30,6 +30,11 @@
 		494E5BC82A646CD700577BAB /* ViewModel-TodaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E5BC72A646CD700577BAB /* ViewModel-TodaysView.swift */; };
 		494E5BCA2A646D9F00577BAB /* AttendedLecturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E5BC92A646D9F00577BAB /* AttendedLecturesView.swift */; };
 		494E5BCC2A646E0B00577BAB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494E5BCB2A646E0B00577BAB /* SettingsView.swift */; };
+		4976918F2A68D318007020B3 /* OnboardingMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4976918E2A68D318007020B3 /* OnboardingMessageView.swift */; };
+		497691922A68D399007020B3 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497691912A68D399007020B3 /* Message.swift */; };
+		497691942A68D4E2007020B3 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497691932A68D4E2007020B3 /* Messages.swift */; };
+		497691962A68D729007020B3 /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497691952A68D729007020B3 /* StartButtonView.swift */; };
+		497691982A68D7C0007020B3 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497691972A68D7C0007020B3 /* OnBoardingView.swift */; };
 		49B78C922A68254F005D847E /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B78C912A68254F005D847E /* DateExtension.swift */; };
 		49B78C942A683A01005D847E /* FileManager-DocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B78C932A683A01005D847E /* FileManager-DocumentsDirectory.swift */; };
 		49F5856B2A6593C500890C0B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F5856A2A6593C500890C0B /* User.swift */; };
@@ -61,6 +66,11 @@
 		494E5BC72A646CD700577BAB /* ViewModel-TodaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel-TodaysView.swift"; sourceTree = "<group>"; };
 		494E5BC92A646D9F00577BAB /* AttendedLecturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendedLecturesView.swift; sourceTree = "<group>"; };
 		494E5BCB2A646E0B00577BAB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		4976918E2A68D318007020B3 /* OnboardingMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMessageView.swift; sourceTree = "<group>"; };
+		497691912A68D399007020B3 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		497691932A68D4E2007020B3 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
+		497691952A68D729007020B3 /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
+		497691972A68D7C0007020B3 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		49B78C912A68254F005D847E /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		49B78C932A683A01005D847E /* FileManager-DocumentsDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager-DocumentsDirectory.swift"; sourceTree = "<group>"; };
 		49F5856A2A6593C500890C0B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -120,6 +130,7 @@
 		494E5BA02A6460F700577BAB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				497691902A68D38F007020B3 /* Onboarding */,
 				494E5BA32A6461F300577BAB /* Subject.swift */,
 				494E5BA52A64623600577BAB /* Lecture.swift */,
 				494E5BA72A64627000577BAB /* Schedule.swift */,
@@ -134,6 +145,7 @@
 		494E5BA12A6460FD00577BAB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4976918D2A68D17B007020B3 /* Onboarding */,
 				494E5B942A645FA600577BAB /* ContentView.swift */,
 				494E5BAD2A6464C900577BAB /* HomeView.swift */,
 				494E5BBD2A646B8400577BAB /* ScheduleView.swift */,
@@ -173,6 +185,25 @@
 				494E5BB92A646ADE00577BAB /* AddSubjectView.swift */,
 			);
 			path = DetailViews;
+			sourceTree = "<group>";
+		};
+		4976918D2A68D17B007020B3 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				4976918E2A68D318007020B3 /* OnboardingMessageView.swift */,
+				497691952A68D729007020B3 /* StartButtonView.swift */,
+				497691972A68D7C0007020B3 /* OnBoardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		497691902A68D38F007020B3 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				497691912A68D399007020B3 /* Message.swift */,
+				497691932A68D4E2007020B3 /* Messages.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		49B78C8F2A6632FB005D847E /* Archived */ = {
@@ -274,15 +305,20 @@
 				494E5BAA2A64628700577BAB /* Semester.swift in Sources */,
 				494E5B952A645FA600577BAB /* ContentView.swift in Sources */,
 				494E5BC42A646C4B00577BAB /* ViewModel-AllLecturesView.swift in Sources */,
+				497691982A68D7C0007020B3 /* OnBoardingView.swift in Sources */,
 				494E5BA42A6461F300577BAB /* Subject.swift in Sources */,
 				49F5856B2A6593C500890C0B /* User.swift in Sources */,
 				494E5BAE2A6464C900577BAB /* HomeView.swift in Sources */,
 				494E5BC82A646CD700577BAB /* ViewModel-TodaysView.swift in Sources */,
 				494E5BB02A6464DA00577BAB /* ViewModel-HomeView.swift in Sources */,
 				49B78C942A683A01005D847E /* FileManager-DocumentsDirectory.swift in Sources */,
+				497691942A68D4E2007020B3 /* Messages.swift in Sources */,
 				494E5BBC2A646B5A00577BAB /* LectureItemView.swift in Sources */,
 				494E5BC62A646CC900577BAB /* TodaysView.swift in Sources */,
+				497691962A68D729007020B3 /* StartButtonView.swift in Sources */,
+				4976918F2A68D318007020B3 /* OnboardingMessageView.swift in Sources */,
 				494E5BC22A646C3400577BAB /* AllLecturesView.swift in Sources */,
+				497691922A68D399007020B3 /* Message.swift in Sources */,
 				494E5BA82A64627000577BAB /* Schedule.swift in Sources */,
 				494E5BCA2A646D9F00577BAB /* AttendedLecturesView.swift in Sources */,
 				494E5BB32A6466C600577BAB /* CircularProgressView.swift in Sources */,
