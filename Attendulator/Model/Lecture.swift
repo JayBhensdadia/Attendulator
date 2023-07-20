@@ -8,7 +8,7 @@
 import Foundation
 
 struct Lecture: Hashable, Identifiable,Codable{
-    let id = UUID().uuidString
+    var id = UUID().uuidString
     var subject: Subject
     var startHour: Int
     var startMinute: Int
@@ -18,11 +18,11 @@ struct Lecture: Hashable, Identifiable,Codable{
     var attended: Bool = false
     
     var newId: String{
-        var date = date?.formatted(date: .abbreviated, time: .omitted) ?? Date().formatted(date: .abbreviated, time: .omitted)
-        var startTime = "\(startHour)\(startMinute)"
-        var endTime = "\(endHour)\(endMinute)"
+        let date = date?.formatted(date: .abbreviated, time: .omitted) ?? Date().formatted(date: .abbreviated, time: .omitted)
+        let startTime = "\(startHour)\(startMinute)"
+        let endTime = "\(endHour)\(endMinute)"
         
-        var sub = subject.fullName
+        let sub = subject.fullName
         
         return "\(sub)\(date)\(startTime)\(endTime)"
     }

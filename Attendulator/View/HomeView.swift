@@ -17,11 +17,12 @@ struct HomeView: View {
     
     var todaysLectures: [Lecture]{
         
-        
+        print(Date().todayStart.formatted())
+        print(Date().todayEnd.formatted())
         
         var lecs = [Lecture]()
         for lecture in sem.allLectures{
-            if lecture.date! > Date().dayBefore && lecture.date! < Date().dayAfter{
+            if lecture.date! > Date().todayStart && lecture.date! < Date().todayEnd{
                 lecs.append(lecture)
             }
         }
