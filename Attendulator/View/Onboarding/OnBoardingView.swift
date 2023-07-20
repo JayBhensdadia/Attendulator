@@ -15,6 +15,7 @@ struct OnBoardingView: View {
         TabView {
             ForEach(onboardingMessages) { item in
                   OnboardingMessageView(message: item)
+                    
                 } //: LOOP
               } //: TAB
               .tabViewStyle(PageTabViewStyle())
