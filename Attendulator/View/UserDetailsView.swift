@@ -13,6 +13,8 @@ struct UserDetailsView: View {
     @State var changeSemester = false
     @State var showingAddSubjectView = false
     
+    @State var showingResetAlert = false
+    
     var body: some View {
         NavigationStack{
             Form{
@@ -69,7 +71,8 @@ struct UserDetailsView: View {
                 Section("Renew semester"){
                     
                     Button(role: .destructive){
-                        user.currentSemester = Semester()
+                        showingResetAlert = true
+                        
                     }label: {
                         Text("Renew Semester")
                     }
@@ -83,6 +86,12 @@ struct UserDetailsView: View {
             }
             .onDisappear(perform: user.saveData)
             .scrollIndicators(.hidden)
+            .alert("Are you sure?", isPresented: $showingResetAlert) {
+                Button("Yes"){ user.currentSemester = Semester() }
+                Button("Cancel",role: .cancel){}
+            }message: {
+                Text("renewal of semester will erase all data of previous semester!")
+            }
         }
         
     }
